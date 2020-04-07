@@ -1,0 +1,27 @@
+Launch pyspark with below .bash_profile
+pyspark --master local[2]
+
+================================================================================
+.bash_profile
+================================================================================
+# Setting PATH for Python 3.8
+# The original version is saved in .bash_profile.pysave
+PATH="/Library/Frameworks/Python.framework/Versions/3.8/bin:${PATH}"
+export PATH
+
+# Spark
+export SPARK_HOME=$HOME/apps/spark-3.0.0-preview2-bin-hadoop2.7
+export PATH="$SPARK_HOME/bin:$PATH"
+
+export PYSPARK_PYTHON=/Library/Frameworks/Python.framework/Versions/3.8/bin/python3
+# export PYSPARK_DRIVER_PYTHON=/Library/Frameworks/Python.framework/Versions/3.8/bin/python3
+
+# Jupyter
+export PYSPARK_DRIVER_PYTHON=ipython
+export PYSPARK_DRIVER_PYTHON_OPTS="notebook"
+
+# SCALA
+export SCALA_HOME=$HOME/apps/scala-2.13.1
+export PATH=$PATH:$SCALA_HOME/bin
+================================================================================
+
