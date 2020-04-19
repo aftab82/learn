@@ -18,8 +18,13 @@ def power_list(nums):
     ]
 
 
-def flatten():
+def flatten(matrix):
     """Return a flattened version of the given 2-D matrix (list-of-lists)."""
+    return [
+        elem
+        for row in matrix
+        for elem in row
+    ]
 
 
 def reverse_difference():
