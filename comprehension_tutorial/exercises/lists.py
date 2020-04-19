@@ -3,13 +3,19 @@
 
 def get_vowel_names(names):
     """Return a list containing all names given that start with a vowel."""
-    return [name
-            for name in names
-            if name[0].lower() in 'aeiou']
+    return [
+        name
+        for name in names
+        if name[0].lower() in 'aeiou'
+    ]
 
 
-def power_list():
+def power_list(nums):
     """Return a list that contains each number raised to the i-th power."""
+    return [
+        num ** i
+        for i, num in enumerate(nums)
+    ]
 
 
 def flatten():
