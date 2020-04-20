@@ -1,8 +1,9 @@
 """Generator Exercises."""
 
 
-def is_prime():
+def is_prime(num):
     """Return True if candidate number is prime."""
+    return all(num % n != 0 for n in range(2, int(num / 2) + 1))
 
 
 def all_together():
