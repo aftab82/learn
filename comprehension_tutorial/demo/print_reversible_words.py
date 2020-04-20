@@ -1,10 +1,8 @@
-words_over_five_letters = []
 with open('dictionary.txt') as dictionary_file:
-    words = [
+    words = (
         line.rstrip()
         for line in dictionary_file
-    ]
-
+    )
     words_over_five_letters = [
         word
         for word in words
