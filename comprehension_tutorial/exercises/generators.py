@@ -24,8 +24,22 @@ def interleave(iterable1, iterable2):
     )
 
 
-def translate():
+def translate(sentence):
     """Return a transliterated version of the given sentence."""
+    trans = {'esta': 'is',
+             'la': 'the',
+             'en': 'in',
+             'gato': 'cat',
+             'casa': 'house',
+             'el': 'the'
+             }
+
+    words = (sentence.split())
+
+    return ' '.join([
+        trans[word]
+        for word in words
+    ])
 
 
 def parse_ranges():
