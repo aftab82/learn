@@ -15,8 +15,13 @@ def all_together(*iterables):
     )
 
 
-def interleave():
+def interleave(iterable1, iterable2):
     """Return iterable of one item at a time from each list."""
+    return (
+        elem
+        for pair in zip(iterable1, iterable2)
+        for elem in pair
+    )
 
 
 def translate():
