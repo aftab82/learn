@@ -6,8 +6,13 @@ def is_prime(num):
     return all(num % n != 0 for n in range(2, int(num / 2) + 1))
 
 
-def all_together():
+def all_together(*iterables):
     """String together all items from the given iterables."""
+    return (
+        elem
+        for iterable in iterables
+        for elem in iterable
+    )
 
 
 def interleave():
