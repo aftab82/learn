@@ -3,7 +3,10 @@
 
 def is_prime(num):
     """Return True if candidate number is prime."""
-    return all(num % n != 0 for n in range(2, int(num / 2) + 1))
+    return all(
+        num % n != 0
+        for n in range(2, num)
+    )
 
 
 def all_together(*iterables):
@@ -26,7 +29,7 @@ def interleave(iterable1, iterable2):
 
 def translate(sentence):
     """Return a transliterated version of the given sentence."""
-    trans = {'esta': 'is',
+    words = {'esta': 'is',
              'la': 'the',
              'en': 'in',
              'gato': 'cat',
@@ -34,16 +37,21 @@ def translate(sentence):
              'el': 'the'
              }
 
-    words = (sentence.split())
-
-    return ' '.join([
-        trans[word]
-        for word in words
-    ])
+    return ' '.join(
+        words[word]
+        for word in sentence.split()
+    )
 
 
-def parse_ranges():
+def parse_ranges(range_string):
     """Return a list of numbers corresponding to number ranges in a string"""
+    ranges = range_string.split(',')
+    all_nums = []
+    for range_ in ranges:
+        lower, upper = map(int, range_.split('-'))
+        for i in range(lower, upper+1):
+            all_nums.append(i)
+    return (num for num in all_nums)
 
 
 def first_prime_over():
