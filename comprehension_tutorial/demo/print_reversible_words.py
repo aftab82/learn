@@ -9,9 +9,10 @@ with open('dictionary.txt') as dictionary_file:
         if len(word) > 5
     ]
 
-reversed_words = set()
-for word in words_over_five_letters:
-    reversed_words.add(word[::-1])
+reversed_words = {
+    word[::-1]
+    for word in words_over_five_letters
+}
 
 reversible_words = [
     word
