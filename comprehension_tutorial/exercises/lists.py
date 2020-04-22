@@ -27,8 +27,12 @@ def flatten(matrix):
     ]
 
 
-def reverse_difference():
+def reverse_difference(nums):
     """Return list subtracted from the reverse of itself."""
+    return [
+        minuend - subtrahend
+        for minuend, subtrahend in zip(nums, nums[::-1])
+    ]
 
 
 def matrix_add():
