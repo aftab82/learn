@@ -30,13 +30,17 @@ def flatten(matrix):
 def reverse_difference(nums):
     """Return list subtracted from the reverse of itself."""
     return [
-        minuend - subtrahend
-        for minuend, subtrahend in zip(nums, nums[::-1])
+        m - n
+        for m, n in zip(nums, nums[::-1])
     ]
 
 
-def matrix_add():
+def matrix_add(m1, m2):
     """Add corresponding numbers in given 2-D matrices."""
+    return [
+        [m + n for m, n in zip(row1, row2)]
+        for row1, row2 in zip(m1, m2)
+    ]
 
 
 def transpose():
