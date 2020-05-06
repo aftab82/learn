@@ -1,11 +1,12 @@
 """Generator Exercises."""
+from math import sqrt
 
 
 def is_prime(num):
     """Return True if candidate number is prime."""
-    return all(
+    return num >= 2 and all(
         num % n != 0
-        for n in range(2, num)
+        for n in range(2, int(sqrt(num)) + 1)
     )
 
 
@@ -45,18 +46,26 @@ def translate(sentence):
 
 def parse_ranges(range_string):
     """Return a list of numbers corresponding to number ranges in a string"""
-    ranges = range_string.split(',')
-    all_nums = []
-    for range_ in ranges:
-        lower, upper = map(int, range_.split('-'))
-        for i in range(lower, upper+1):
-            all_nums.append(i)
-    return (num for num in all_nums)
+    limits = (
+        map(int, group.split('-'))
+        for group in range_string.split(',')
+    )
+    return (
+        i
+        for lower, upper in limits
+        for i in range(lower, upper + 1)
+    )
 
 
-def first_prime_over():
+def first_prime_over(num):
     """Return the first prime number over a given number."""
+    return next(
+        n
+        for n in range(num + 1, num ** 2)
+        if is_prime(n)
+    )
 
 
-def is_anagram():
+def is_anagram(word1, word2):
     """Return True if the given words are anagrams."""
+    return sorted(c for c in word1.lower() if c.isalpha()) == sorted(c for c in word2.lower() if c.isalpha())
