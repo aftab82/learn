@@ -1,5 +1,4 @@
 """More comprehension exercises"""
-from lists import get_factors
 
 
 def flip_dict(input_dict):
@@ -36,6 +35,7 @@ def dict_from_tuple(tuple_list):
 
 def get_all_factors(nums):
     """Return a dictionary mapping numbers to their factors."""
+    from exercises.lists import get_factors
     return {
         num: get_factors(num)
         for num in nums
