@@ -1,0 +1,7 @@
+{
+  "id": 1,
+  "firstName": "Leah",
+  "lastName": "Organa",
+  "address": { "name": "Home", "location": "Alderan" }
+  "favoriteMovies": [{"name": "Star Wars"}, {"name": "Star Trek"}]
+}
